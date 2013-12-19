@@ -18,12 +18,12 @@ end
 
 rewind "template[#{node["openstack"]["dashboard"]["apache"]["sites-path"]}]" do
   source 'dash-site.erb'
-  cookbook 'openstack-network-wrapper'
+  cookbook 'openstack-dashboard-wrapper'
 end
 
 rewind "template[#{node["openstack"]["dashboard"]["local_settings_path"]}]" do
   source 'local_settings.py.erb'
-  cookbook 'openstack-network-wrapper'
+  cookbook 'openstack-dashboard-wrapper'
 end 
 
 execute 'manage.py compress' do
